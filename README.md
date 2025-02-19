@@ -45,7 +45,19 @@ For more details and to access the dataset, visit the [Intel Lab Data page](http
 ## Performance Metrics
 - **Anomaly Detection**
   - Threshold-based anomaly flagging.
-  - Autoencoder reconstruction error analysis.
+  - The following table outlines the relationship between reconstruction error percentiles and the corresponding percentage of anomalies detected:
+
+| Percentile | Reconstruction Error Threshold | Percentage of Anomalies Detected |
+|------------|-------------------------------:|---------------------------------:|
+| 90th       | 0.010597                       | 10.00%                           |
+| 92nd       | 0.013420                       | 8.02%                            |
+| 94th       | 0.016075                       | 6.01%                            |
+| 95th       | 0.016975                       | 5.00%                            |
+| 96th       | 0.018287                       | 4.01%                            |
+| 97th       | 0.019191                       | 3.02%                            |
+| 98th       | 0.020420                       | 2.00%                            |
+| 99th       | 0.021131                       | 1.01%                            |
+
 
 - **Fault Prediction**
   - Accuracy: **99.69%**
