@@ -7,14 +7,15 @@ This repository implements a **hybrid deep learning approach** for fault detecti
 - **LSTM Autoencoder for Anomaly Detection**
   - Encodes sensor data into a lower-dimensional representation and reconstructs it to detect deviations.
   - Uses reconstruction error as an anomaly score.
+  - Anomalies are flagged based on a threshold (e.g., 98th percentile of reconstruction error).
 
 - **LSTM-based Fault Forecasting**
-  - Incorporates extracted features and anomaly scores to predict potential faults.
+  - The LSTM model processes the feature sequences (including anomaly flags) to predict potential faults.
   - Uses a **sigmoid-activated Dense layer** for binary fault classification.
 
 - **Feature Engineering**
-  - Computes statistical features like mean sensor values.
-  - Appends anomaly scores to improve fault prediction performance.
+  - The **anomaly flag** (binary indicator: 1 if the reconstruction error exceeds the threshold, 0 otherwise) is appended as an additional feature.
+  - This results in a feature set that includes both raw sensor data and anomaly information, providing richer context for fault prediction.
 
 ## Libraries & Dependencies
 - **TensorFlow/Keras** – Deep learning framework for LSTM models.
